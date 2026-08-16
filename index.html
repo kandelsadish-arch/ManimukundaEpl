@@ -1,0 +1,1659 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="description"
+        content="Environment Premier League (EPL MMC) - Manimukunda College environmental awareness and community activities."
+    >
+
+    <meta name="theme-color" content="#2E7D32">
+
+    <title>Environment Premier League | EPL MMC</title>
+
+    <style>
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #F9F8F6;
+            color: #2C3E50;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ================================
+           VARIABLES
+        ================================= */
+
+        :root {
+            --forest-green: #2E7D32;
+            --dark-green: #1B5E20;
+            --light-green: #81C784;
+            --white: #FFFFFF;
+            --soft-beige: #F9F8F6;
+            --text-dark: #2C3E50;
+            --text-muted: #555555;
+            --border: rgba(46, 125, 50, 0.12);
+            --shadow: 0 10px 30px rgba(46, 125, 50, 0.08);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        /* ================================
+           ANIMATIONS
+        ================================= */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 14px 5%;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+            box-shadow:
+                0 2px 10px rgba(0, 0, 0, 0.05);
+
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            text-decoration: none;
+        }
+
+        .logo-placeholder {
+            width: 45px;
+            height: 45px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--light-green);
+
+            border: 2px solid var(--forest-green);
+        }
+
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .nav-left span {
+            color: var(--forest-green);
+
+            font-size: 1.25rem;
+            font-weight: 700;
+
+            letter-spacing: -0.5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            list-style: none;
+        }
+
+        .nav-right a {
+            position: relative;
+
+            color: var(--text-dark);
+
+            text-decoration: none;
+
+            font-weight: 500;
+
+            transition: color var(--transition);
+        }
+
+        .nav-right a:hover {
+            color: var(--forest-green);
+        }
+
+        .nav-right a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -5px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--forest-green);
+
+            transition: width var(--transition);
+        }
+
+        .nav-right a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+
+            border: 0;
+            background: transparent;
+
+            color: var(--forest-green);
+
+            font-size: 1.8rem;
+
+            cursor: pointer;
+
+            padding: 5px;
+        }
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 85vh;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 5rem 5%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(129, 199, 132, 0.15),
+                    rgba(46, 125, 50, 0.05)
+                ),
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(46, 125, 50, 0.08),
+                    transparent 40%
+                );
+        }
+
+        .hero h1 {
+            max-width: 900px;
+
+            margin-bottom: 1.5rem;
+
+            color: var(--forest-green);
+
+            font-size: clamp(2.4rem, 5vw, 4.5rem);
+
+            font-weight: 800;
+
+            line-height: 1.1;
+
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin-bottom: 2.5rem;
+
+            color: var(--text-muted);
+
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 8px;
+
+            padding: 0.9rem 2rem;
+
+            border: none;
+            border-radius: var(--radius);
+
+            background: var(--forest-green);
+            color: var(--white);
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform var(--transition),
+                background var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--dark-green);
+
+            transform: translateY(-3px);
+        }
+
+        /* ================================
+           WEEK NAVIGATION
+        ================================= */
+
+        .nav-cards-section {
+            padding: 3rem 5%;
+
+            background: var(--white);
+        }
+
+        .nav-cards-grid {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 1.5rem;
+        }
+
+        .nav-card {
+            display: block;
+
+            padding: 1.5rem;
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            background: var(--soft-beige);
+
+            color: var(--forest-green);
+
+            text-align: center;
+            text-decoration: none;
+
+            font-size: 1.1rem;
+            font-weight: 700;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform var(--transition),
+                background var(--transition),
+                color var(--transition);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+
+            background: var(--forest-green);
+
+            color: var(--white);
+        }
+
+        /* ================================
+           ARTICLES
+        ================================= */
+
+        .article-section {
+            max-width: 1000px;
+
+            margin: 3rem auto;
+
+            padding: 3rem;
+
+            background: var(--white);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+        .week-tag {
+            display: inline-block;
+
+            margin-bottom: 1rem;
+
+            padding: 0.3rem 1rem;
+
+            border-radius: 50px;
+
+            background: rgba(129, 199, 132, 0.2);
+
+            color: var(--forest-green);
+
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .article-section h2 {
+            margin-bottom: 0.5rem;
+
+            color: var(--text-dark);
+
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+            line-height: 1.2;
+        }
+
+        .article-date {
+            margin-bottom: 2rem;
+
+            color: var(--text-muted);
+
+            font-size: 0.95rem;
+
+            font-style: italic;
+        }
+
+        /* ================================
+           IMAGE GALLERY
+        ================================= */
+
+        .image-gallery {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 1rem;
+
+            margin-bottom: 2.5rem;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+
+            object-fit: cover;
+
+            border-radius: var(--radius);
+
+            background: #e0e0e0;
+
+            border: 1px solid rgba(0, 0, 0, 0.05);
+
+            transition: transform var(--transition);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+
+            color: var(--text-muted);
+
+            font-size: 1.05rem;
+        }
+
+        /* ================================
+           TEAM
+        ================================= */
+
+        .team-section {
+            padding: 5rem 5%;
+
+            background: var(--soft-beige);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+
+            text-align: center;
+        }
+
+        .section-header h2 {
+            margin-bottom: 0.5rem;
+
+            color: var(--forest-green);
+
+            font-size: 2.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        .team-grid {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 2rem;
+        }
+
+        .team-card {
+            padding: 2rem 1.5rem;
+
+            background: var(--white);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            text-align: center;
+
+            transition: transform var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .team-photo {
+            width: 110px;
+            height: 110px;
+
+            margin: 0 auto 1.2rem;
+
+            overflow: hidden;
+
+            border: 3px solid var(--forest-green);
+
+            border-radius: 50%;
+
+            background: var(--light-green);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .team-card h3,
+        .team-card h4 {
+            margin-bottom: 0.4rem;
+
+            color: var(--text-dark);
+
+            font-size: 1.2rem;
+        }
+
+        .team-role {
+            margin-bottom: 1rem;
+
+            color: var(--forest-green);
+
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .team-card p {
+            color: var(--text-muted);
+
+            font-size: 0.95rem;
+        }
+
+        /* ================================
+           ABOUT
+        ================================= */
+
+        .about-section {
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding: 5rem 5%;
+
+            text-align: center;
+        }
+
+        .about-section h2 {
+            margin-bottom: 1.5rem;
+
+            color: var(--forest-green);
+
+            font-size: 2.5rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1.5rem;
+
+            color: var(--text-muted);
+
+            font-size: 1.1rem;
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            padding: 4rem 5% 2rem;
+
+            background: #1A381C;
+
+            color: var(--white);
+
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 0.5rem;
+
+            color: var(--light-green);
+
+            font-size: 1.8rem;
+
+            font-weight: 700;
+        }
+
+        .footer-subtitle {
+            margin-bottom: 2rem;
+
+            color: #B0BEC5;
+        }
+
+        .social-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 1rem;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 2rem;
+
+            list-style: none;
+        }
+
+        .social-links a {
+            display: inline-block;
+
+            padding: 0.5rem 1rem;
+
+            border-radius: 50px;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            color: var(--white);
+
+            text-decoration: none;
+
+            transition: background var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--light-green);
+
+            color: var(--text-dark);
+        }
+
+        .contact-info {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 0.5rem;
+
+            margin-bottom: 2rem;
+
+            color: #B0BEC5;
+
+            font-size: 0.95rem;
+        }
+
+        .copyright {
+            padding-top: 1.5rem;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #90A4AE;
+
+            font-size: 0.85rem;
+        }
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 12px 5%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-right {
+                position: absolute;
+
+                top: 100%;
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                padding: 1rem;
+
+                background: var(--white);
+
+                box-shadow:
+                    0 10px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-right.active {
+                display: flex;
+            }
+
+            .nav-right li {
+                width: 100%;
+            }
+
+            .nav-right a {
+                display: block;
+
+                padding: 0.8rem;
+
+                text-align: center;
+            }
+
+            .nav-right a::after {
+                display: none;
+            }
+
+            .hero {
+                min-height: 75vh;
+
+                padding: 4rem 6%;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.2rem, 10vw, 3.5rem);
+            }
+
+            .article-section {
+                margin: 1.5rem 1rem;
+
+                padding: 1.5rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+
+                gap: 1rem;
+            }
+
+            .image-gallery img {
+                height: 230px;
+            }
+
+            .section-header h2,
+            .about-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ================================
+           SMALL PHONES
+        ================================= */
+
+        @media (max-width: 480px) {
+
+            .nav-left span {
+                font-size: 1.05rem;
+            }
+
+            .logo-placeholder {
+                width: 40px;
+                height: 40px;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.3rem;
+            }
+
+            .article-section {
+                padding: 1.2rem;
+            }
+
+            .image-gallery img {
+                height: 210px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ================================
+           SAFARI / IPHONE FIXES
+        ================================= */
+
+        @supports (-webkit-touch-callout: none) {
+
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+
+            img {
+                -webkit-user-drag: none;
+            }
+        }
+
+        /* Reduce motion for users who request it */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <a href="#home" class="nav-left">
+
+            <div class="logo-placeholder">
+                <img
+                    src="https://scontent.cdninstagram.com/v/t51.82787-19/752524488_18151491817474229_9165431275062854821_n.jpg?_nc_cat=111&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=NfNmPjZRwGoQ7kNvwF41kkC&_nc_oc=AdomQqqd_tt3-auocc7-Ta0SD1LGB2IDnQq79kLOSem3oUdcfs_3WCn9WkbcSTXECKQ&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=4fblw9IGmmHb5lz85tsTfw&_nc_ss=7baaf&oh=00_AQF1XkONUX48dfmULnRcu-s-4yKl_USEpQoiXnXCNOsWXw&oe=6A8641E7"
+                    alt="EPL MMC Logo"
+                    width="45"
+                    height="45"
+                >
+            </div>
+
+            <span>EPL MMC</span>
+
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="mobile-menu"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <ul class="nav-right" id="nav-menu">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#team">Team</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#footer">Contact</a>
+            </li>
+
+        </ul>
+
+    </header>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section id="home" class="hero fade-in">
+
+        <h1>
+            Protect Nature, Protect Our Future
+        </h1>
+
+        <p>
+            Welcome to the Environment Premier League (EPL MMC).
+            We unite communities, champion green transformations,
+            and secure a sustainable tomorrow through active weekly engagement.
+            This platform showcases our journey toward a cleaner, greener, and healthier environment. Explore our activities, awareness programs, community initiatives, and achievements as we work together to reduce pollution, manage waste, and inspire positive environmental change.
+        </p>
+
+        <a href="#activities" class="btn">
+            View Weekly Activities
+            <span>↓</span>
+        </a>
+
+    </section>
+
+
+    <!-- ================================
+         ACTIVITY NAVIGATION
+    ================================= -->
+
+    <section id="activities" class="nav-cards-section">
+
+        <div class="nav-cards-grid">
+
+            <a href="#week1" class="nav-card">
+                Week 1
+            </a>
+
+            <a href="#week2" class="nav-card">
+                Week 2
+            </a>
+
+            <a href="#week3" class="nav-card">
+                Week 3
+            </a>
+
+            <a href="#week4" class="nav-card">
+                Week 4
+            </a>
+
+            <a href="#team" class="nav-card">
+                Team
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         WEEK 1
+    ================================= -->
+
+    <section id="week1" class="article-section slide-up">
+
+        <span class="week-tag">
+            Week 1 Activity
+        </span>
+
+        <h2>
+            Community Clean-up Campaign and Awareness Program
+        </h2>
+
+        <div class="article-date">
+            Published: October 1, 2026
+        </div>
+
+        <div class="image-gallery">
+
+            <img
+                src="image1.jpg"
+                alt="Community members cleaning the environment"
+                loading="lazy"
+            >
+
+            <img
+                src="/image2.jpg"
+                alt="Sorting recyclable materials"
+                loading="lazy"
+            >
+
+            <img
+                src="image3.jpg"
+                loading="lazy"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
+                alt="Group photo after the clean-up"
+                loading="lazy"
+            >
+
+        </div>
+
+        <div class="article-content">
+
+            <p>
+                Our opening week kicked off with massive energy as over
+                fifty dedicated volunteers gathered for a comprehensive
+                community clean-up initiative. Armed with reusable gloves,
+                biodegradable bags, and an unwavering commitment to the
+                environment, the team targeted high-traffic public zones
+                prone to plastic pollution.
+            </p>
+
+            <p>
+                Throughout the morning, participants systematically cleared
+                discarded plastics, glass bottles, and non-biodegradable waste.
+                Beyond clearing the physical debris, the campaign served as
+                an educational platform. Volunteers engaged directly with
+                local residents, sharing practical insights on waste
+                segregation at the source and implementing daily habits to
+                significantly reduce individual environmental impact.
+            </p>
+
+            <p>
+                The event concluded with a successful waste sorting session,
+                ensuring that recyclable items could be properly managed.
+                This powerful launch set a high standard for the upcoming
+                weeks, demonstrating that collective community action can
+                create immediate positive change.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         WEEK 2
+    ================================= -->
+
+    <section id="week2" class="article-section slide-up">
+
+        <span class="week-tag">
+            Week 2 Activity
+        </span>
+
+        <h2>
+            Tree Plantation and Trash to Treasure hunt
+        </h2>
+
+        <div class="article-date">
+            Published: October 8, 2026
+        </div>
+
+        <div class="image-gallery">
+
+            <img
+                src="/image4.jpg"
+                alt="Tree plantation activity"
+                loading="lazy"
+            >
+
+            <img
+                src="/image5.jpg"
+                alt="Volunteers planting trees"
+                loading="lazy"
+            >
+
+            <img
+                src="/image6.jpg"
+                alt="Environmental activity"
+                loading="lazy"
+            >
+
+            <img
+                src="/image7.jpg"
+                alt="Tree plantation and environmental work"
+                loading="lazy"
+            >
+
+        </div>
+
+        <div class="article-content">
+
+            <p>
+                Week 2 focused deeply on green infrastructure restoration.
+                EPL MMC members and local youth groups joined forces to
+                promote tree plantation and environmental responsibility.
+            </p>
+
+            <p>
+                Participants learned about proper planting methods,
+                long-term care, and the importance of protecting native
+                plants and trees.
+            </p>
+
+            <p>
+                The Trash to Treasure activity also encouraged students
+                to transform discarded and reusable materials into useful
+                and creative products. The activity demonstrated that waste
+                can have value when managed creatively.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         WEEK 3
+    ================================= -->
+
+    <section id="week3" class="article-section slide-up">
+
+        <span class="week-tag">
+            Week 3 Activity
+        </span>
+
+        <h2>
+            Role Play Act and School Awareness Program
+        </h2> 
+
+        <div class="article-date">
+            Published: October 15, 2026
+        </div>
+
+        <div class="image-gallery">
+
+            <img
+                src="/image8.jpg"
+                alt="Role play environmental awareness activity"
+                loading="lazy"
+            >
+
+            <img
+                src="/image9.jpg"
+                alt="Students participating in environmental activities"
+                loading="lazy"
+            >
+
+            <img
+                src="/image10.jpg"
+                loading="lazy"
+            >
+
+            <img
+                src="/image11.jpg"
+                alt="Environmental awareness program"
+                loading="lazy"
+            >
+
+        </div>
+
+        <div class="article-content">
+
+            <p>
+                As part of the Environment Premier League (EPL),
+                Manimukunda College organized an environmental role-play
+                activity to make environmental education more engaging
+                and meaningful.
+            </p>
+
+            <p>
+                Through creative performances, students presented important
+                environmental issues and demonstrated how everyday actions
+                can affect our surroundings.
+            </p>
+
+            <p>
+                The activity encouraged students and community members to
+                think about their responsibilities toward nature and
+                inspired them to take positive environmental action.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         WEEK 4
+    ================================= -->
+
+    <section id="week4" class="article-section slide-up">
+
+        <span class="week-tag">
+            Week 4 Activity
+        </span>
+
+        <h2>
+             Ghardailo Program and Dustbin installation
+        </h2>
+
+        <div class="article-date">
+            Published: October 22, 2026
+        </div>
+
+        <div class="image-gallery">
+
+            <img
+                src="/image12.jpg"
+                alt="Environmental awareness role play"
+                loading="lazy"
+            >
+
+            <img
+                src="/image13.jpg "
+                alt="Students participating in awareness activities"
+                loading="lazy"
+            >
+
+            <img
+                src="/image14.jpg"
+                alt="Youth engagement and environmental learning"
+                loading="lazy"
+            >
+
+            <img
+                src="/image15.jpg"
+                alt="Environmental awareness program"
+                loading="lazy"
+            >
+
+        </div>
+
+        <div class="article-content">
+
+            <p>
+                In the fourth week of the Environment Premier League (EPL), Manimukunda College conducted a Ghar Dailo awareness program and installed dustbins in selected areas. Students visited households to spread awareness about proper waste management, waste segregation, cleanliness, and reducing littering. The installation of dustbins provided a convenient way for people to dispose of waste properly and helped promote a cleaner, healthier, and more responsible community.
+            </p>
+
+
+            <p>
+                <strong>Our goal:</strong>
+                To turn environmental awareness into responsible action
+                and create a cleaner and healthier community.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         TEAM
+    ================================= -->
+
+    <section id="team" class="team-section">
+
+        <div class="section-header">
+
+            <h2>
+                Meet Our Core Team
+            </h2>
+
+            <p>
+                The passionate drivers behind EPL MMC's environmental missions
+            </p>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <!-- Member 1 -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="https://scontent.fbwa1-1.fna.fbcdn.net/v/t1.15752-9/771738674_27481118988254876_3971288478680196825_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=UrTP4cCIPGwQ7kNvwG6vfsC&_nc_oc=AdpbOwy6_ZnSw6GKgRmQ-jQnXOYjqP9wmT3rYWBwz5A_TseG8lyAs1yd1HmrMgvmckg&_nc_zt=23&_nc_ht=scontent.fbwa1-1.fna&_nc_ss=7baaf&oh=03_Q7cD6AFj7LYbE8s16gnxg6ExKmcNGSn7nDJucIL3_dfmzv8PWg&oe=6AA87F1A"
+                        alt="Ginij Raj Khanal"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h3>
+                    Ginij Raj Khanal
+                </h3>
+
+                <div class="team-role">
+                    President of Manimukunda Apiary Science Society
+                </div>
+
+                <p>
+                    Environmental leader helping guide the strategic
+                    vision and coordination of EPL MMC activities.
+                </p>
+
+            </div>
+
+
+            <!-- Member 2 -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="/teammember2.jpg"
+                        alt="Ridam Neupane"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h3>
+                    Ridam Neupane
+                </h3>
+
+                <div class="team-role">
+                    President of Manimukunda Student Cooperative Council
+                </div>
+
+                <p>
+                    Coordinates volunteer networks, institutional
+                    partnerships, and environmental awareness activities.
+                </p>
+
+            </div>
+
+
+            <!-- Member 3 -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="/teammember3.jpg"
+                        alt="Megha Rajali Magar"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h3>
+                    Megha Rajali Magar
+                </h3>
+
+                <div class="team-role">
+                    Secretary of Manimukunda Apiary Science Society
+                </div>
+
+                <p>
+                    Supports the organization and coordination of
+                    weekly environmental activities.
+                </p>
+
+            </div>
+
+
+            <!-- Member 4 -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="/teammember4.jpg"
+                        alt="Anuska Bhusal"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h3>
+                    Anuska Bhusal
+                </h3>
+            </div>Member of Manimukunda Student Cooperative Council
+                </div>
+
+                <p>
+                    Documents environmental initiatives and supports
+                    digital media and awareness activities.
+                </p>
+
+            </div>
+
+
+            <!-- Member 5 -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="/teammember5.jpg"
+                        alt="Aashisma Rakaskoti"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h3>
+                    Aashisma Rakaskoti
+                </h3>
+
+                <div class="team-role">
+                    Supervisor of Manimukunda Apiary Science Society
+                </div>
+
+                <p>
+                    Supervises the activities and overall work of
+                    the Environment Premier League.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         ABOUT
+    ================================= -->
+
+    <section id="about" class="about-section">
+
+        <h2>
+            About EPL MMC
+        </h2>
+
+        <p>
+            The Environment Premier League (EPL MMC) is an environmental
+            initiative associated with Manimukunda College that promotes
+            environmental awareness, cleanliness, community participation,
+            and responsible action.
+        </p>
+
+        <p>
+            Through structured weekly activities such as community
+            clean-ups, tree plantation, creative reuse, role plays,
+            and awareness programs, EPL MMC encourages students and
+            communities to become active environmental stewards.
+        </p>
+        <h3>
+            <p> The goal of Manimukunda College in the Environment Premier League (EPL) is to create environmental awareness and encourage people to take action for a cleaner and healthier community. Through activities such as clean-up campaigns, awareness programs, waste management, Trash to Treasure, Ghar Dailo programs, and dustbin installation, we aim to reduce pollution and promote responsible environmental habits. Our efforts can help reduce litter, improve waste management, protect nature, and inspire others to become responsible environmental citizens.</p>
+        </h3>
+        <h4>
+              <p> Why Manimukunda College Should Win EPL <p>
+
+              </p> Manimukunda College deserves to win the Environment Premier League because we have focused not only on competition but on creating meaningful environmental change. Our team has actively participated in awareness programs, waste management, creative reuse, community visits, cleanliness activities, and dustbin installation. We have worked to turn environmental awareness into real action and involve the community in protecting our surroundings. Winning the EPL would recognize our teamwork, creativity, dedication, and commitment to building a cleaner, greener, and more sustainable community.</p>
+        </h4>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer id="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                EPL MMC
+            </div>
+
+            <div class="footer-subtitle">
+                Made by Epl Members
+            </div>
+            
+
+            <ul class="social-links">
+
+                <li>
+                    <a href="#" aria-label="Facebook">
+                        Facebook
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" aria-label="Instagram">
+                        Instagram
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" aria-label="YouTube">
+                        YouTube
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mailto:contact@eplmmc.org">
+                        Email
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="contact-info">
+
+                <span>
+                    📍 Location: Butwal, Nepal
+                </span>
+
+                <span>
+                    ✉️ Email: contact@eplmmc.org
+                </span>
+
+            </div>
+
+            <div class="copyright">
+
+                &copy; 2026 Environment Premier League (EPL MMC).
+                All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script>
+
+        const mobileMenuToggle =
+            document.getElementById("mobile-menu");
+
+        const navMenu =
+            document.getElementById("nav-menu");
+
+
+        /* Open / Close Mobile Menu */
+
+        mobileMenuToggle.addEventListener("click", function () {
+
+            const isOpen =
+                navMenu.classList.toggle("active");
+
+            mobileMenuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+
+        /* Close menu after clicking a link */
+
+        document
+            .querySelectorAll(".nav-right a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navMenu.classList.remove("active");
+
+                    mobileMenuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                });
+
+            });
+
+
+        /* Close menu if user clicks outside */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedInsideMenu =
+                navMenu.contains(event.target);
+
+            const clickedButton =
+                mobileMenuToggle.contains(event.target);
+
+            if (!clickedInsideMenu && !clickedButton) {
+
+                navMenu.classList.remove("active");
+
+                mobileMenuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
+        /* Image error fallback */
+
+        document
+            .querySelectorAll("img")
+            .forEach(function (image) {
+
+                image.addEventListener(
+                    "error",
+                    function () {
+
+                        image.style.backgroundColor = "#e0e0e0";
+
+                        image.alt =
+                            "Image unavailable";
+
+                    },
+                    {
+                        once: true
+                    }
+                );
+
+            });
+
+    </script>
+
+</body>
+</html>
